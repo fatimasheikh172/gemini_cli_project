@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player">
+        <div class="player__header">
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-switch" class="theme-switch__input">
+                <label for="theme-switch" class="theme-switch__label">
+                    <span class="theme-switch__indicator"></span>
+                </label>
+            </div>
+            <div class="player__img player__img--absolute">
+                <img class="player__img-img" src="https://via.placeholder.com/300" alt="Album Art">
+            </div>
+            <div class="player__header-info">
+                <h2 class="player__title">Song Title</h2>
+                <h3 class="player__subtitle">Artist</h3>
+            </div>
+        </div>
+        <div class="player__body">
+            <div class="player__controls">
+                <button class="player__button" id="prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+                </button>
+                <button class="player__button" id="shuffle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+                </button>
+                <button class="player__button player__button--play" id="play">
+                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                </button>
+                <button class="player__button" id="next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+                </button>
+            </div>
+            <div class="player__timeline">
+                <div class="player__progress-container">
+                    <div class="player__progress"></div>
+                </div>
+                <div class="player__time">
+                    <span class="player__time-current">0:00</span>
+                    <span class="player__time-total">0:00</span>
+                </div>
+            </div>
+            <div class="player__volume">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
+        <div class="player__footer">
+            <ul class="player__playlist" id="playlist"></ul>
+        </div>
+    </div>
+    <audio id="audio"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
